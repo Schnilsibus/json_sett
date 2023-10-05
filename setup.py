@@ -8,11 +8,15 @@ setuptools.setup(
     version="0.0.0",
     author="Nils Urbach",
     author_email="ndu01u@gmail.com",
-    description="",
+    description="load and save settings from/ to a json file",
     long_description=long_description,
     long_description_content_type="text/markdown",
     license="MIT",
-    keywords=[],
+    keywords=[
+        "json",
+        "settings"
+    ],
+    url="https://github.com/Schnilsibus/json_settings.git",
     package_dir={"": "_core"},
     classifiers=[
         "Development Status :: 3 - Alpha",
@@ -23,7 +27,7 @@ setuptools.setup(
         "Programming Language :: Python"
     ],
     test_suite="tests",
-    requires=[
-        "json_convenience"
+    install_requires=[
+        "json-convenience",
     ]
 )
