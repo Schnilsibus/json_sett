@@ -2,15 +2,20 @@ import json_convenience as jsonx
 from pathlib import Path
 from typing import Any
 
-# TODO: add documentation
-# TODO: make it its own thing and add to git / pip
-
 
 Setting = jsonx.Property
 
 
 class Settings(object):
+    """
+    represents a json file containing settings
+    """
     def __init__(self, file: Path):
+        """
+        initialize a Settings object
+
+        :param file: the path to the json file
+        """
         if not file.exists():
             raise FileNotFoundError(f"{file} doesn't exist")
         elif not file.is_file() or not file.suffix == ".json":
@@ -35,6 +40,11 @@ class Settings(object):
         self.__dict__[name] = value
 
     def save(self) -> int:
+        """
+        save the settings to the json file
+
+        :return: the number of saved settings (settings that were not changed excluded)
+        """
         counter = 0
         for name in self.__dict__:
             if jsonx.contains_property(file_path=self._file, keys=(name, )):
