@@ -32,7 +32,7 @@ class SettingTestCase(TestCase):
 class TestSuiteInit(SettingTestCase):
     def test_raisesIfPathDoesntExist(self):
         try:
-            Settings(path=path_to_directory / "dont_exist.json")
+            Settings(file=path_to_directory / "dont_exist.json")
             self.fail(msg="should have raised FileNotFoundError")
         except FileNotFoundError:
             pass
@@ -41,7 +41,7 @@ class TestSuiteInit(SettingTestCase):
 
     def test_raisesIfPathIsDir(self):
         try:
-            Settings(path=path_to_directory)
+            Settings(file=path_to_directory)
             self.fail(msg="should have raised FileNotFoundError")
         except FileNotFoundError:
             pass
@@ -50,7 +50,7 @@ class TestSuiteInit(SettingTestCase):
 
     def test_raisesIfPathIsNoJson(self):
         try:
-            Settings(path=path_to_no_json)
+            Settings(file=path_to_no_json)
             self.fail(msg="should have raised FileNotFoundError")
         except FileNotFoundError:
             pass
@@ -58,14 +58,14 @@ class TestSuiteInit(SettingTestCase):
             self.fail(msg="should have raised FileNotFoundError")
 
     def test_worksIfPathIsValid(self):
-        Settings(path=valid_path)
+        Settings(file=valid_path)
 
 
 # noinspection PyStatementEffect
 class TestSuiteGet(SettingTestCase):
     def setUp(self) -> None:
         SettingTestCase.setUp(self=self)
-        self.my_settings = Settings(path=valid_path)
+        self.my_settings = Settings(file=valid_path)
 
     def test_raisesIfSettingIsNotThere(self):
         try:
@@ -97,7 +97,7 @@ class TestSuiteGet(SettingTestCase):
 class TestCaseSet(SettingTestCase):
     def setUp(self) -> None:
         SettingTestCase.setUp(self=self)
-        self.my_settings = Settings(path=valid_path)
+        self.my_settings = Settings(file=valid_path)
 
     def test_raisesIfKeyIsNeitherSettingNorAttribute(self):
         try:
@@ -135,7 +135,7 @@ class TestCaseSet(SettingTestCase):
 class TestCaseSave(SettingTestCase):
     def setUp(self) -> None:
         SettingTestCase.setUp(self=self)
-        self.my_settings = Settings(path=valid_path)
+        self.my_settings = Settings(file=valid_path)
 
     def test_savesOnlyKeysAlreadyInFile(self):
         self.my_settings.save()

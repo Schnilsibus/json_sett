@@ -10,13 +10,13 @@ Setting = jsonx.Property
 
 
 class Settings(object):
-    def __init__(self, path: Path):
-        if not path.exists():
-            raise FileNotFoundError(f"{path} doesn't exist")
-        elif not path.is_file() or not path.suffix == ".json":
-            raise FileNotFoundError(f"{path} is no .json file")
-        self.__dict__["_all_keys"] = tuple(jsonx.read_json_file(file_path=path).keys())
-        self.__dict__["_file"] = path
+    def __init__(self, file: Path):
+        if not file.exists():
+            raise FileNotFoundError(f"{file} doesn't exist")
+        elif not file.is_file() or not file.suffix == ".json":
+            raise FileNotFoundError(f"{file} is no .json file")
+        self.__dict__["_all_keys"] = tuple(jsonx.read_json_file(file_path=file).keys())
+        self.__dict__["_file"] = file
 
     def __getattr__(self, name: str) -> Setting:
         if name not in self.__dict__:
