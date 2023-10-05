@@ -4,7 +4,7 @@ with open("README.md", "r") as fp:
     long_description = fp.read()
 
 setuptools.setup(
-    name="json_settings",
+    name="json-settings",
     version="0.0.0",
     author="Nils Urbach",
     author_email="ndu01u@gmail.com",
@@ -23,4 +23,7 @@ setuptools.setup(
         "Programming Language :: Python"
     ],
     test_suite="tests",
-)   
+    requires=[
+        "json_convenience"
+    ]
+)

@@ -1,1 +1,1 @@
-# json_settings
+# json-settings

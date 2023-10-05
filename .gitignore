@@ -130,3 +130,6 @@ dmypy.json
 
 # Dev Test files
 *[Tt]est*.py
+
+# pycharms files
+.idea/
