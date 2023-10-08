@@ -16,7 +16,7 @@ setuptools.setup(
         "json",
         "settings"
     ],
-    url="https://github.com/Schnilsibus/json_settings.git",
+    url="https://github.com/Schnilsibus/json_sett.git",
     package_dir={"": "_core"},
     classifiers=[
         "Development Status :: 3 - Alpha",
