@@ -39,6 +39,25 @@ class Settings(object):
             raise jsonx.NotAPropertyError(no_property_object=value)
         self.__dict__[name] = value
 
+    def get(self, name: str) -> Setting:
+        """
+        get a setting
+
+        :param name: the name of the setting
+        :return: the value of the setting
+        """
+        return self.__getattr__(name=name)
+
+    def set(self, name: str, value: Any):
+        """
+        set the value of a setting
+
+        :param name: the name of the setting
+        :param value: the new value of the setting
+        :return:
+        """
+        self.__setattr__(name=name, value=value)
+
     def save(self) -> int:
         """
         save the settings to the json file

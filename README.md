@@ -1,14 +1,14 @@
-# json-settings
+# json-sett
 Read settings from and save them to a json file.
 
 ## Requirements
 - json-convenience
 
 ## Install
-install using pip: ```python -m pip install json-settings```
+install using pip: ```python -m pip install json-sett```
 
 ## Usage
-- import the 'Settings' class: ```from json_settings import Settings```  
+- import the 'Settings' class: ```from json_sett import Settings```  
 - initialize it: ```my_settings = Settings(file=<your_file_path>```  
 - then access your settings as attributes of the 'my_settings' object:  
     say your json file contains the key 'settingA' you can access its value like that: ```my_settings.settingA```

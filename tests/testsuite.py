@@ -1,7 +1,7 @@
 from unittest import TestCase
 from pathlib import Path
 from json_convenience import write_json_file, JSONKeyNotFoundError, NotAPropertyError, read_json_file
-from _core.json_settings import Settings
+from _core.json_sett import Settings
 
 
 settings = {

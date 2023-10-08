@@ -4,7 +4,7 @@ with open("README.md", "r") as fp:
     long_description = fp.read()
 
 setuptools.setup(
-    name="json-settings",
+    name="json-sett",
     version="0.0.0",
     author="Nils Urbach",
     author_email="ndu01u@gmail.com",
